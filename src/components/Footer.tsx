@@ -1,11 +1,16 @@
 
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Instagram, Linkedin, Heart, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   return (
-    <footer className="relative z-10 py-8 px-6 bg-black/30 backdrop-blur-sm border-t border-express-purple/20">
-      <div className="container mx-auto flex-col">
+    <footer className={`w-full z-50 py-4 px-4 bg-black/30 backdrop-blur-sm border-t border-express-purple/20 
+      ${isHomePage ? 'fixed bottom-0 left-0' : 'relative'}`}>
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="text-gray-400 text-sm">
